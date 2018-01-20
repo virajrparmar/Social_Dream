@@ -1,0 +1,82 @@
+<! DOCTYPE html>
+<html>
+<head>
+<style>
+fieldset {
+    border: 0;
+}
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
+<title> homepage </title>
+</head>
+<body bgcolor="orange">
+<form>
+<b> <p style="float:right; margin-right:125px; margin-bottom:0px"> E-mail ID: </p> </b>
+<input type="email" id="email" name="email" style="clear:right; float:right; margin-right:25px" required>
+<b> <p style="clear:right; float:right; margin-right:125px; margin-bottom:0px"> Password: </p> </b>
+<input type="password" id="password" name="password" style="clear:right; float:right; margin-right:25px" required>
+<a href="" style="clear:right; float:right; margin-right:25px; font-size:15px"> Forgot Password? </a> <br>
+<input type="submit" name="login" id="login" value="Login" style="clear:right; float:right; margin-right:150px">
+</form> 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form style="background:file:///C:/Users/amogh/Desktop/whitish%20grey.jpg">
+<fieldset>
+<legend> <h1> Register your account </h1> </legend>
+ First Name <font color="red">*</font>
+<input type="text" id="firstname" name="firstname" style="clear:right; margin-left:80px" required>
+ <br>
+ <br>
+ Last Name <font color="red">*</font>
+ <input type="text" id="lastname" name="lastname" style="margin-left:81px" required> 
+ <br> 
+ <br>
+ E-mail Address <font color="red">*</font>
+ <input type="email" id="email" name="email" style="margin-left:50px" required> 
+ <br> 
+ <br>
+ Mobile <font color="red">*</font>
+ <input type="tel" id="mobno" name="mobno" style="margin-left:103px" required> 
+ <br> 
+ <br>
+ Password <font color="red">*</font>
+ <input type="password" id="password" name="password" style="margin-left:88px" required><br><br>
+<table style="margin-left:165px">
+<tr>
+<td>
+To make your password stronger <br>
+* Add Uppercase characters.	<br>
+* Add Numbers. <br>
+* Add Special Symbols like !,@,$,%,etc.
+</td>
+</tr>
+</table>  
+ <br>
+ Confirm Password <font color="red">*</font>
+ <input type="password" id="confirmpassword" name="confirmpassword" style="margin-left:28px" required> 
+ <br> 
+ <br>
+ Date Of Birth <font color="red">*</font>
+<input type="date" id="bday" name="bday" style="margin-left: 59px;" required>
+<br>
+<br>
+ Gender <font color="red">*</font> 
+ <span style="display:inline-block; width: 100px;"></span> Male <input type="radio" name="gender" id="gender0"  value="male"> Female <input type="radio" name="gender" id="gender1" value="female" checked> Others <input type="radio" name="gender" id="gender2" value="Others">
+ <br>
+ <br> 
+ <input type="checkbox" id="t&c" name="t&c"> By clicking on this you agree with our <a href="" target="_blank"><u>Terms And Conditions</u></a>  
+ <br> 
+ <br>
+<input type="submit" name="sign_in" id="sign_in" value="Sign In" style="background-color:green; border:none; height: 35px; padding: 5px 10px 5px 10px; font-size: 20px;" >
+</fieldset>
+</form>
+</body>
+</html>
