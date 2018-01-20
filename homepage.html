@@ -1,7 +1,17 @@
 <! DOCTYPE html>
 <html>
 <head>
+<script src="homepage.js"> </script>
 <style>
+#myProgress{
+	width:	10%;
+	background-color:	#ddd;
+}
+#myBar{
+	width:	0%;
+	height: 15px;
+	background-color:	#4CAF50; 
+}
 fieldset {
     border: 0;
 }
@@ -15,9 +25,9 @@ table {
 <body bgcolor="orange">
 <form>
 <b> <p style="float:right; margin-right:125px; margin-bottom:0px"> E-mail ID: </p> </b>
-<input type="email" id="email" name="email" style="clear:right; float:right; margin-right:25px" required>
+<input type="email" id="email1" name="email1" style="clear:right; float:right; margin-right:25px" required>
 <b> <p style="clear:right; float:right; margin-right:125px; margin-bottom:0px"> Password: </p> </b>
-<input type="password" id="password" name="password" style="clear:right; float:right; margin-right:25px" required>
+<input type="password" id="password1" name="password1" style="clear:right; float:right; margin-right:25px" required>
 <a href="" style="clear:right; float:right; margin-right:25px; font-size:15px"> Forgot Password? </a> <br>
 <input type="submit" name="login" id="login" value="Login" style="clear:right; float:right; margin-right:150px">
 </form> 
@@ -28,7 +38,7 @@ table {
 <br>
 <br>
 <br>
-<form style="background:file:///C:/Users/amogh/Desktop/whitish%20grey.jpg">
+<form onsubmit="return ValidateForm()">
 <fieldset>
 <legend> <h1> Register your account </h1> </legend>
  First Name <font color="red">*</font>
@@ -40,7 +50,7 @@ table {
  <br> 
  <br>
  E-mail Address <font color="red">*</font>
- <input type="email" id="email" name="email" style="margin-left:50px" required> 
+ <input type="email" id="email2" name="email2" style="margin-left:50px" required> 
  <br> 
  <br>
  Mobile <font color="red">*</font>
@@ -48,7 +58,11 @@ table {
  <br> 
  <br>
  Password <font color="red">*</font>
- <input type="password" id="password" name="password" style="margin-left:88px" required><br><br>
+ <input type="password" id="password2" name="password2"  onkeydown="scorePassword()" style="margin-left:88px" required> (Min. 7 characters) <br><br>
+ <div id="myProgress" style="margin-left:165px">
+	<div id="myBar"> </div>
+</div>
+<p id="p" style="margin-left:165px"> </p>
 <table style="margin-left:165px">
 <tr>
 <td>
