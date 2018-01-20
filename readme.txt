@@ -1,0 +1,1 @@
+AMOC 2018; Members -> Viraj, Amogh, Darshit; Team -> Social_Dream; Project -> Social Networking Website HiccApp;
