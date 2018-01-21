@@ -1,128 +1,7 @@
 <! DOCTYPE html>
 <html>
 <head>
-<script>
-
-function ValidateForm()
-{
-	var x=document.getElementById("firstname").value;
-	for(var i=0;i!=x.length;i++) {
-		var y = x.charAt(i);
-		if(y == ' ') {
-			alert("Spaces not allowed in First Name");
-			return false;
-		}
-		else if(!(y >= 'a' && y <= 'z') && !(y >= 'A' && y <= 'Z')) {
-			alert("Invalid characters in First Name");
-			return false;
-		}
-	}
-	x=document.getElementById("lastname").value;
-	for(var i=0;i!=x.length;i++) {
-		var y = x.charAt(i);
-		if(y == ' ') {
-			alert("Spaces not allowed in Last Name");
-			return false;
-		}
-		else if(!(y >= 'a' && y <= 'z') && !(y >= 'A' && y <= 'Z')) {
-			alert("Invalid characters in Last Name");
-			return false;
-		}
-	}
-	y=document.getElementById("mobno").value;
-	if(y.length!=10)
-	{
-		alert("Mobile Number not valid!");
-		return false;
-	}
-	x=document.getElementById("password2").value;
-	if(x.length<7)
-	{
-		alert("Characters not sufficient in Password!");
-		return false;
-	}
-	y=document.getElementById("confirmpassword").value;
-	if(x.localeCompare(y)!=0)
-	{
-		alert("Password fields do not match!");
-		return false;
-	}
-	x = new Date();
-	y = document.getElementById("bday").value;
-	var year = parseInt(y.slice(0,4));
-	var month = parseInt(y.slice(5,7)) - 1;
-	var date = parseInt(y.slice(8,10));
-	var z = new Date(year,month,date);
-	if(z>x) {
-		alert("Wow! You are not born yet.");
-		return false;
-	}
-	x.setFullYear(x.getFullYear()-5,x.getMonth(),x.getDate());
-	if(z>=x) {
-		alert("You are not eligible, Sorry.");
-		return false;
-	}
-	x=document.getElementById("t&c");
-	if(x.checked==false)
-	{
-		alert("You need to agree to the terms and conditions in order to register!");
-		return false;
-	}
-	alert("You've registered successfully!");
-	return true;
-}
-function move(score) {
-	var elem = document.getElementById("myBar");
-	if (score > 80)
-        elem.style.backgroundColor="green";
-    else if (score > 30)
-        elem.style.backgroundColor="yellow";
-    else
-        elem.style.backgroundColor="red";
-  	frame();
-  	function frame() {
-    elem.style.width = score + '%'; 
-  }
-}
-function scorePassword() {
-	var pass=document.getElementById("password2").value;
-    var score = 0;
-    if (!pass)
-        document.getElementById("p").innerHTML="Password NULL!";
-
-    // award every unique letter until 5 repetitions
-    var letters = new Object();
-    for (var i=0; i<pass.length; i++) {
-        letters[pass[i]] = (letters[pass[i]] || 0) + 1;
-        score += 5.0 / letters[pass[i]];
-    }
-
-    // bonus points for mixing it up
-    var variations = {
-        digits: /\d/.test(pass),
-        lower: /[a-z]/.test(pass),
-        upper: /[A-Z]/.test(pass),
-        nonWords: /\W/.test(pass),
-    }
-
-    variationCount = 0;
-    for (var check in variations) {
-        variationCount += (variations[check] == true) ? 1 : 0;
-    }
-    score += (variationCount - 1) * 10;
-
-    score=parseInt(score);
-    move(score);
-    if (score > 80)
-        document.getElementById("p").innerHTML="Password Strong!";
-    else if (score > 30)
-        document.getElementById("p").innerHTML="Password Medium!";
-    else
-        document.getElementById("p").innerHTML="Password Weak!";
-}
-
-
-</script>
+<title> homepage </title>
 <style>
 #myProgress{
 	width:	10%;
@@ -141,9 +20,9 @@ table {
 	border-collapse: collapse;
 }
 </style>
-<title> homepage </title>
+<script src = "homepage.js"> </script>
 </head>
-<body bgcolor="orange">
+<body>
 <form>
 <b> <p style="float:right; margin-right:125px; margin-bottom:0px"> E-mail ID: </p> </b>
 <input type="email" id="email1" name="email1" style="clear:right; float:right; margin-right:25px" required>
@@ -204,13 +83,13 @@ To make your password stronger <br>
 <br>
 <br>
  Gender <font color="red">*</font> 
- <span style="display:inline-block; width: 100px;"></span> Male <input type="radio" name="gender" id="gender0"  value="male"> Female <input type="radio" name="gender" id="gender1" value="female" checked> Others <input type="radio" name="gender" id="gender2" value="Others">
+ <span style="display:inline-block; width: 100px;"></span> Male <input type="radio" name="gender" id="gender1"  value="male"> Female <input type="radio" name="gender" id="gender2" value="female" checked> Others <input type="radio" name="gender" id="gender3" value="Others">
  <br>
  <br> 
  <input type="checkbox" id="t&c" name="t&c"> By clicking on this you agree with our <a href="" target="_blank"><u>Terms And Conditions</u></a>  
  <br> 
  <br>
-<input type="submit" name="sign_in" id="sign_in" value="Sign In" style="background-color:green; border:none; height: 35px; padding: 5px 10px 5px 10px; font-size: 20px;" >
+<input type="submit" name="signin" id="signin" value="Sign In" style="background-color:skyblue; border:none; height: 35px; padding: 5px 10px 5px 10px; font-size: 20px;" >
 </fieldset>
 </form>
 </body>
