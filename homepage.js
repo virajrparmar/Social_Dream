@@ -49,12 +49,21 @@ function ValidateForm()
 	var date = parseInt(y.slice(8,10));
 	var z = new Date(year,month,date);
 	if(z>x) {
-		alert("Wow! You are not born yet.");
+		alert("WOW! YOU ARE NOT BORN YET");
+		return false;
+	}
+	if(year == x.getFullYear() && month == x.getMonth() && date == x.getDate()) {
+		alert("HAPPY BIRTHDAY, SEE YA MAYBE 5 YEARS LATER!!!");
 		return false;
 	}
 	x.setFullYear(x.getFullYear()-5,x.getMonth(),x.getDate());
-	if(z>=x) {
-		alert("You are not eligible, Sorry.");
+	if(z>x) {
+		alert("FIRST GROW UP, KIDDO!!!");
+		return false;
+	}
+	x.setFullYear(x.getFullYear()-115,x.getMonth(),x.getDate());
+	if(z<x) {
+		alert("WHY ARE YOU STILL ALIVE? RIP!!!");
 		return false;
 	}
 	x=document.getElementById("t&c");
