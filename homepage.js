@@ -30,6 +30,11 @@ function ValidateForm()
 		alert("Mobile Number not valid!");
 		return false;
 	}
+	var x = parseInt(y);
+	if(isNaN(x)) {
+		alert("Invalid Mobile Number!");
+		return false;
+	}
 	x=document.getElementById("password2").value;
 	if(x.length<7)
 	{
