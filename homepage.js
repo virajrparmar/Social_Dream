@@ -30,8 +30,7 @@ function ValidateForm()
 		alert("Mobile Number not valid!");
 		return false;
 	}
-	var x = parseInt(y);
-	if(isNaN(x)) {
+	if(isNaN(y)) {
 		alert("Invalid Mobile Number!");
 		return false;
 	}

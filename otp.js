@@ -8,8 +8,7 @@ function ValidateForm() {
 		alert("OTP is a 4-digit number!");
 		return false;
 	}
-	var y = parseInt(x);
-	if(isNaN(y)) {
+	if(isNaN(x)) {
 		alert("Invalid OTP!");
 		return false;
 	}
