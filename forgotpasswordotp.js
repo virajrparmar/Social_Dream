@@ -17,4 +17,5 @@ function ValidateForm() {
 
 function ResendOTP() {
 	alert("An OTP has been resent to your E-mail Address");
+	return false;
 }
