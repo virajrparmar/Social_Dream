@@ -79,6 +79,11 @@ function ValidateForm()
 	alert("You've registered successfully!");
 	return true;
 }
+
+function whatever() {
+	return false;
+}
+
 function move(score) {
 	var elem = document.getElementById("myBar");
 	if (score > 80)

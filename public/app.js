@@ -11,6 +11,18 @@
     };
     firebase.initializeApp(config);
 
+  const email1_obj = document.getElementById('email1');
+  const password1_obj = document.getElementById('password1');
+  const login_obj = document.getElementById('login');
+
+  login_obj.addEventListener('click', e => {
+      const email1 = email1_obj.value;
+      const password1 = password1_obj.value;
+      const auth = firebase.auth();
+      const promise = auth.signInWithEmailAndPassword(email1,password1);
+      promise.catch(e => console.log(e.message));
+  });
+
   const email2_obj = document.getElementById('email2');
   const password2_obj = document.getElementById('password2');
   const signin_obj = document.getElementById('signin');
@@ -23,11 +35,19 @@
   		promise.catch(e => alert(e.message));
   });
 
+  const logout_obj = document.getElementById('logout');
+
+  logout_obj.addEventListener('click', e => {
+      firebase.auth().signOut();
+  });
+
   firebase.auth().onAuthStateChanged(firebaseUser => {
   		if(firebaseUser) {
   			console.log(firebaseUser);
+        logout_obj.style.visibility = "visible";
   		} else {
-  			alert('You are not logged in');
+  			console.log('You are not logged in');
+        logout_obj.style.visibility = "hidden";
   		}
   });
 }());
