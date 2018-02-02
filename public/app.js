@@ -42,7 +42,8 @@
           Mobile: mn,
           Password: password2,
           Date_Of_Birth: bd,
-          Gender: gender
+          Gender: gender,
+          OTP_Verified: false
       })
       .then(function() {
           console.log("Document successfully written!");
