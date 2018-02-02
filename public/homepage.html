@@ -3,6 +3,7 @@
 <head>
 <title> HiccApp </title>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
 <style>
 #myProgress{
 	width:	10%;
@@ -52,7 +53,7 @@ table {
  <br> 
  <br>
  E-mail Address <font color="red">*</font>
- <input type="email" id="email2" name="email2" style="margin-left:50px" required> 
+ <input type="email" id="email2" name="email2" style="margin-left:50px" onkeydown="signInDisable()" onchange="emailVerification()" required> 
  <br> 
  <br>
  Mobile <font color="red">*</font>

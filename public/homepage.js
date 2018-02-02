@@ -1,5 +1,6 @@
 function ValidateForm()
 {
+
 	var x=document.getElementById("firstname").value;
 	for(var i=0;i!=x.length;i++) {
 		var y = x.charAt(i);
@@ -132,4 +133,25 @@ function scorePassword() {
         document.getElementById("p").innerHTML="Password Medium!";
     else
         document.getElementById("p").innerHTML="Password Weak!";
+}
+
+function emailVerification() {
+
+	var db = firebase.firestore();
+
+	const UsersRef = db.collection('Users').doc(document.getElementById('email2').value)
+
+	UsersRef.get()
+	  .then((docSnapshot) => {
+	    if (docSnapshot.exists) {
+	      alert("Email-ID Already Exists");
+	      document.getElementById('email2').value = "";
+	    }
+	});
+
+	document.getElementById("signin").disabled = false;
+}
+
+function signInDisable() {
+	document.getElementById("signin").disabled = true;
 }
