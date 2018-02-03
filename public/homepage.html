@@ -3,6 +3,20 @@
 <head>
 <title> HiccApp </title>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script>
+
+	// Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyAG-7U-o1hUOhYbJ2Xox8oEYR-RlsHcMFI",
+    authDomain: "hiccapp-official.firebaseapp.com",
+    databaseURL: "https://hiccapp-official.firebaseio.com",
+    projectId: "hiccapp-official",
+    storageBucket: "hiccapp-official.appspot.com",
+    messagingSenderId: "447455220269"
+    };
+    firebase.initializeApp(config);
+
+</script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
 <style>
 #myProgress{
@@ -25,7 +39,7 @@ table {
 <script src = "homepage.js"> </script>
 </head>
 <body>
-<form onsubmit="return whatever()">
+<form>
 <b> <p style="float:right; margin-right:125px; margin-bottom:0px"> E-mail ID: </p> </b>
 <input type="email" id="email1" name="email1" style="clear:right; float:right; margin-right:25px" required>
 <b> <p style="clear:right; float:right; margin-right:125px; margin-bottom:0px"> Password: </p> </b>
@@ -40,9 +54,9 @@ table {
 <br>
 <br>
 <br>
-<form onsubmit="return ValidateForm()" action="otp.html" target="workarea">
+<form onsubmit=" return ValidateForm()" target="workarea">
 <fieldset>
-<legend> <h1> Register your account </h1> </legend>
+<legend> <h1>Step 1: Register your account </h1> </legend>
  First Name <font color="red">*</font>
 <input type="text" id="firstname" name="firstname" style="clear:right; margin-left:80px" required>
  <br>
@@ -91,9 +105,10 @@ To make your password stronger <br>
  <input type="checkbox" id="t&c" name="t&c"> By clicking on this you agree with our <a href="" target="_blank"><u>Terms And Conditions</u></a>  
  <br> 
  <br>
+ <b> <p id="message" name="message" style="display: none;"> </p> </b>
+ <input type="button" onclick="location.href='otp.html';" name="pts2" id="pts2" value="Proceed To Step 2" style="background-color:skyblue; border:none; height: 35px; padding: 5px 10px 5px 10px; font-size: 20px; display: none;" >
 <input type="submit" name="signin" id="signin" value="Sign In" style="background-color:skyblue; border:none; height: 35px; padding: 5px 10px 5px 10px; font-size: 20px;" >
 </fieldset>
 </form>
-<script src="app.js"> </script>
 </body>
 </html>

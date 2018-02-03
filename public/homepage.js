@@ -77,8 +77,71 @@ function ValidateForm()
 		alert("You need to agree to the terms and conditions in order to register!");
 		return false;
 	}
-	alert("You've registered successfully!");
-	return true;
+
+	  var email2_obj = document.getElementById('email2');
+  	  const password2_obj = document.getElementById('password2');
+      const signin_obj = document.getElementById('signin');
+
+  	  var email2 = email2_obj.value;
+  	  const password2 = password2_obj.value;
+      var fn = document.getElementById('firstname').value;
+      var ln = document.getElementById('lastname').value;
+      var mn = document.getElementById('mobno').value;
+      var bd = document.getElementById("bday").value;
+      var mg = document.getElementById('gender1');
+      var fg = document.getElementById('gender2');
+      var og = document.getElementById('gender3');
+      if(mg.checked) {
+        var gender = "Male";
+      }else if(fg.checked) {
+        var gender = "Female";
+      }else{
+        var gender = "Other"; 
+      }
+
+      var otp = Math.floor(Math.random() * (9999 - 1000 + 1) ) + 1000;
+
+      var db = firebase.firestore();
+
+      db.collection("Users").doc(email2).set({
+          First_Name: fn,
+          Last_Name: ln,
+          Mobile: mn,
+          Password: password2,
+          Date_Of_Birth: bd,
+          Gender: gender,
+          OTP: otp,
+          OTP_Verified: false
+      })
+      .then(function() {
+          console.log("Document successfully written!");
+      })
+      .catch(function(error) {
+          console.error("Error writing document: ", error);
+      });
+  
+
+	document.getElementById('message').innerHTML="You have registered successfully!";
+
+	document.getElementById('firstname').disabled=true;
+	document.getElementById('lastname').disabled=true;
+	document.getElementById('email2').disabled=true;
+	document.getElementById('password2').disabled=true;
+	document.getElementById('mobno').disabled=true;
+	document.getElementById('confirmpassword').disabled=true;
+	document.getElementById('bday').disabled=true;
+	document.getElementById('gender1').disabled=true;
+	document.getElementById('gender2').disabled=true;
+	document.getElementById('gender3').disabled=true;
+	document.getElementById('t&c').disabled=true;
+
+	document.getElementById('message').style.display='block';
+
+	document.getElementById('signin').style.display='none';
+
+	document.getElementById('pts2').style.display='block';
+
+	return false;
 }
 
 function move(score) {
