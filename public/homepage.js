@@ -119,8 +119,33 @@ function ValidateForm()
       .catch(function(error) {
           console.error("Error writing document: ", error);
       });
-  
 
+	  		const auth = firebase.auth();
+	  		const promise = auth.createUserWithEmailAndPassword(email2,password2);
+	  		promise.then(function(){
+
+	  			var user = firebase.auth().currentUser;
+
+				user.sendEmailVerification().then(function() {
+		
+				firebase.auth().signOut();
+				}).catch(function(error) {
+				alert("Error1!");
+				});
+	  		});
+	  		promise.catch(function(){
+
+	            alert("Error2!");
+	        });
+
+			firebase.auth().onAuthStateChanged(firebaseUser => {
+  			if(firebaseUser) {
+  			console.log(firebaseUser);
+  			} else {
+  			console.log('You are not logged in');
+  			}
+  			});
+  
 	document.getElementById('message').innerHTML="You have registered successfully!";
 
 	document.getElementById('firstname').disabled=true;

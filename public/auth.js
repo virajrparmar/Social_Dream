@@ -47,10 +47,8 @@
   firebase.auth().onAuthStateChanged(firebaseUser => {
   		if(firebaseUser) {
   			console.log(firebaseUser);
-        logout_obj.style.visibility = "visible";
   		} else {
   			console.log('You are not logged in');
-        logout_obj.style.visibility = "hidden";
   		}
   });
 }());
