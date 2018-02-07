@@ -22,10 +22,9 @@ function ValidateForm() {
 			    	if(doc.data().OTP != x) {
 			    		alert("Wrong OTP entered!");
 			    		document.getElementById("otp").value = "";
-			    		return false;
 			    	} else {
 			    		alert("OTP verified successfully!");
-			    		return true;
+			    		window.location.href="otplogin.html";
 			    	}
 			    }
 			}).catch(function(error) {
