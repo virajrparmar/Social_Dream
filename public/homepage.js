@@ -166,6 +166,8 @@ function ValidateForm()
 
 	document.getElementById('pts2').style.display='block';
 
+	//document.getElementById('hidden').innerHTML = email2;
+
 	return false;
 }
 

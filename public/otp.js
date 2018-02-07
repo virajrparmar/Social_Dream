@@ -13,7 +13,7 @@ function ValidateForm() {
 		return false;
 	}
 
-	var db = firebase.firestore();
+			var db = firebase.firestore();
 
 			var docRef = db.collection("Users").doc("virajparmar98@gmail.com");
 
