@@ -128,7 +128,7 @@ function ValidateForm()
 
 				user.sendEmailVerification().then(function() {
 		
-				firebase.auth().signOut();
+				//firebase.auth().signOut();
 				}).catch(function(error) {
 				alert("Error1!");
 				});
