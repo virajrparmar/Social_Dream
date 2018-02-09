@@ -58,7 +58,7 @@
 			docRef.get().then(function(doc) {
 			    if (doc.exists) {
 			    	if(doc.data().Mobile == mobno) {
-			    		if(doc.data().OTP_Verified == false) {
+			    		if(doc.data().FP_OTP_Verified == false) {
 			    			document.getElementById('email').style.display = 'none';
 			    			document.getElementById('password').style.display = 'none';
 			    			document.getElementById('submit').style.display = 'none';
@@ -66,7 +66,7 @@
 			    			document.getElementById('aaa').style.display = 'none';
 			    			document.getElementById('bbb').style.display = 'none';
 			    			document.getElementById('paragraph').style.display = 'block';
-			    			document.getElementById('paragraph').innerHTML = "Your OTP is: " + doc.data().OTP;
+			    			document.getElementById('paragraph').innerHTML = "Your OTP is: " + doc.data().FP_OTP;
 			    		} else {
 			    			document.getElementById('email').style.display = 'none';
 			    			document.getElementById('password').style.display = 'none';
@@ -82,7 +82,7 @@
 			    		document.getElementById('mobno').value = "";
 			    	}
 			    } else {
-			        alert("Invalid E-mail ID or Password!");
+			        alert("Invalid E-mail ID or Mobile Number!");
 			        document.getElementById('mobno').value = "";
 			    }
 			}).catch(function(error) {

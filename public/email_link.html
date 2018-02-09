@@ -68,11 +68,11 @@
 			    			document.getElementById('paragraph').innerHTML = "Your OTP has already been verified!";
 			    		}
 			    	} else {
-			    		alert("Invalid E-mail ID or Password!");
+			    		alert("Wrong E-mail ID or Password!");
 			    		document.getElementById('password').value = "";
 			    	}
 			    } else {
-			        alert("Invalid E-mail ID or Password!");
+			        alert("E-mail ID does not exist!");
 			        document.getElementById('password').value = "";
 			    }
 			}).catch(function(error) {
