@@ -111,7 +111,8 @@ function ValidateForm()
           Date_Of_Birth: bd,
           Gender: gender,
           OTP: otp,
-          OTP_Verified: false
+          OTP_Verified: false,
+          FP_OTP_Verified: true
       })
       .then(function() {
           console.log("Document successfully written!");

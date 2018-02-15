@@ -1,4 +1,5 @@
 function ValidateForm() {
+
 	var x=document.getElementById("mobno").value;
 	if(x.length!=10)
 	{
@@ -19,18 +20,6 @@ function ValidateForm() {
 
 	var otp = Math.floor(Math.random() * (9999 - 1000 + 1) ) + 1000;
 
-						docRef.update({
-						    FP_OTP: otp,
-						    FP_OTP_Verified: false
-						})
-						.then(function() {
-						    console.log("Document successfully updated!");
-						})
-						.catch(function(error) {
-						    // The document probably doesn't exist.
-						    console.error("Error updating document: ", error);
-						});
-
 	docRef.get().then(function(doc) {
 
 			    if (doc.exists) {
@@ -47,7 +36,18 @@ function ValidateForm() {
 
 						alert('Account matched!');
 
-			    		window.location.href = "forgotpasswordotp.html"
+						docRef.update({
+						    FP_OTP: otp,
+						    FP_OTP_Verified: false
+						})
+						.then(function() {
+						    console.log("Document successfully updated!");
+						    window.location.href = "forgotpasswordotp.html";
+						})
+						.catch(function(error) {
+						    // The document probably doesn't exist.
+						    console.error("Error updating document: ", error);
+						});
 
 			    	} else {
 
@@ -59,10 +59,10 @@ function ValidateForm() {
 
 			    } else {
 
-			        alert("E-mail ID does not exist!");
+			        alert("Wrong E-mail ID or Mobile Number!");
 			        document.getElementById('email').value = "";
 			        document.getElementById('mobno').value = "";
-			        
+
 			    }
 			}).catch(function(error) {
 			    console.log("Error getting document:", error);

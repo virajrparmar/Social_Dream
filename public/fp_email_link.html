@@ -60,7 +60,7 @@
 			    	if(doc.data().Mobile == mobno) {
 			    		if(doc.data().FP_OTP_Verified == false) {
 			    			document.getElementById('email').style.display = 'none';
-			    			document.getElementById('password').style.display = 'none';
+			    			document.getElementById('mobno').style.display = 'none';
 			    			document.getElementById('submit').style.display = 'none';
 			    			document.getElementById('heading').style.display = 'none';
 			    			document.getElementById('aaa').style.display = 'none';
@@ -69,7 +69,7 @@
 			    			document.getElementById('paragraph').innerHTML = "Your OTP is: " + doc.data().FP_OTP;
 			    		} else {
 			    			document.getElementById('email').style.display = 'none';
-			    			document.getElementById('password').style.display = 'none';
+			    			document.getElementById('mobno').style.display = 'none';
 			    			document.getElementById('submit').style.display = 'none';
 			    			document.getElementById('heading').style.display = 'none';
 			    			document.getElementById('aaa').style.display = 'none';
@@ -78,12 +78,14 @@
 			    			document.getElementById('paragraph').innerHTML = "Your OTP has already been verified!";
 			    		}
 			    	} else {
-			    		alert("Invalid E-mail ID or Mobile Number!");
+			    		alert("Wrong E-mail ID or Mobile Number!");
 			    		document.getElementById('mobno').value = "";
+			    		document.getElementById('email').value = "";
 			    	}
 			    } else {
-			        alert("Invalid E-mail ID or Mobile Number!");
+			        alert("Wrong E-mail ID or Mobile Number!");
 			        document.getElementById('mobno').value = "";
+			        document.getElementById('email').value = "";
 			    }
 			}).catch(function(error) {
 			    console.log("Error getting document:", error);
