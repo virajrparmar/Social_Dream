@@ -12,10 +12,87 @@ function ValidateForm() {
 		alert("Invalid OTP!");
 		return false;
 	}
-	return true;
+
+			var db = firebase.firestore();
+
+			var user = firebase.auth().currentUser;
+
+			var docRef = db.collection("Users").doc(user.email);
+
+			docRef.get().then(function(doc) {
+			    if (doc.exists) {
+			    	if(doc.data().FP_OTP != x) {
+			    		alert("Wrong OTP entered!");
+			    		document.getElementById("otp").value = "";
+			    	} else {
+			    		alert("OTP verified successfully!");
+
+					    docRef.update({
+						    FP_OTP_Verified: true
+						})
+						.then(function() {
+						    console.log("Document successfully updated!");
+						    window.location.href="forgotpasswordchange.html";
+						})
+						.catch(function(error) {
+						    // The document probably doesn't exist.
+						    console.error("Error updating document: ", error);
+						});
+
+			    	}
+			    }
+			}).catch(function(error) {
+			    console.log("Error getting document:", error);
+			});
+
+			firebase.auth().onAuthStateChanged(firebaseUser => {
+  			if(firebaseUser) {
+  			console.log(firebaseUser);
+  			} else {
+  			console.log('You are not logged in');
+  			}
+  			});
+
+	return false;
 }
 
 function ResendOTP() {
 	alert("An OTP has been resent to your E-mail Address");
+	var otp = Math.floor(Math.random() * (9999 - 1000 + 1) ) + 1000;
+
+	var db = firebase.firestore();
+
+	document.getElementById("otp").value = "";
+	var user = firebase.auth().currentUser;
+
+	var docRef = db.collection("Users").doc(user.email);
+
+			docRef.update({
+			    FP_OTP: otp
+			})
+			.then(function() {
+			    console.log("Document successfully updated!");
+			})
+			.catch(function(error) {
+			    // The document probably doesn't exist.
+			    console.error("Error updating document: ", error);
+			});
+
+	var auth = firebase.auth();
+
+	auth.sendPasswordResetEmail(user.email).then(function() {
+						  console.log("Email Sent");
+						}).catch(function(error) {
+						  console.log("An error happened");
+						});
+
+			firebase.auth().onAuthStateChanged(firebaseUser => {
+  			if(firebaseUser) {
+  			console.log(firebaseUser);
+  			} else {
+  			console.log('You are not logged in');
+  			}
+  			});
+
 	return false;
 }

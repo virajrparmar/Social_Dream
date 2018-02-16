@@ -32,14 +32,13 @@ function ValidateForm() {
 						})
 						.then(function() {
 						    console.log("Document successfully updated!");
+						    firebase.auth().signOut();
+			    			window.location.href="otplogin.html";
 						})
 						.catch(function(error) {
 						    // The document probably doesn't exist.
 						    console.error("Error updating document: ", error);
 						});
-
-			    		firebase.auth().signOut();
-			    		window.location.href="otplogin.html";
 			    	}
 			    }
 			}).catch(function(error) {

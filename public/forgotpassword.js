@@ -41,8 +41,15 @@ function ValidateForm() {
 						    FP_OTP_Verified: false
 						})
 						.then(function() {
-						    console.log("Document successfully updated!");
-						    window.location.href = "forgotpasswordotp.html";
+							const password = doc.data().Password;
+						    const promise = auth.signInWithEmailAndPassword(email,password);
+						    promise.catch(e => console.log(e.message));
+						    promise.then(function(){
+
+						    	console.log("Document successfully updated!");
+						    	window.location.href = "forgotpasswordotp.html";
+
+						    })
 						})
 						.catch(function(error) {
 						    // The document probably doesn't exist.
@@ -67,6 +74,14 @@ function ValidateForm() {
 			}).catch(function(error) {
 			    console.log("Error getting document:", error);
 			});
+
+			firebase.auth().onAuthStateChanged(firebaseUser => {
+	  		if(firebaseUser) {
+	  			console.log(firebaseUser);
+	  		} else {
+	  			console.log('You are not logged in');
+	  		}
+	        });
 
 	return false;
 }
