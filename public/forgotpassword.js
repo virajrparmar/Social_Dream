@@ -38,7 +38,7 @@ function ValidateForm() {
 
 						docRef.update({
 						    FP_OTP: otp,
-						    FP_OTP_Verified: false
+						   	Status: 1
 						})
 						.then(function() {
 							const password = doc.data().Password;

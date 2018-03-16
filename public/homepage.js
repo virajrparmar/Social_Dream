@@ -112,7 +112,7 @@ function ValidateForm()
           Gender: gender,
           OTP: otp,
           OTP_Verified: false,
-          FP_OTP_Verified: true
+          Status: 0
       })
       .then(function() {
           console.log("Document successfully written!");

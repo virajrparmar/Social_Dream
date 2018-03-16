@@ -29,6 +29,7 @@ function ValidateForm() {
 
 					    docRef.update({
 						    OTP_Verified: true
+						    Status: 2
 						})
 						.then(function() {
 						    console.log("Document successfully updated!");
