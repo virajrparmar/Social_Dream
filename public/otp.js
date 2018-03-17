@@ -28,7 +28,7 @@ function ValidateForm() {
 			    		alert("OTP verified successfully!");
 
 					    docRef.update({
-						    OTP_Verified: true
+						    OTP_Verified: true,
 						    Status: 2
 						})
 						.then(function() {

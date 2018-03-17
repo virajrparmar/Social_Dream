@@ -52,7 +52,7 @@ function ValidateForm()
         else
             z = 0;
         docRef.update({
-        Password: x
+        Password: x,
         Status: z
         })
         .then(function() {
