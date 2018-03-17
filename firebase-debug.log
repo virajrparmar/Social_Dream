@@ -1,32 +1,39 @@
-[debug] [2018-03-17T09:11:06.558Z] ----------------------------------------------------------------------
-[debug] [2018-03-17T09:11:06.575Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
-[debug] [2018-03-17T09:11:06.576Z] CLI Version:   3.17.6
-[debug] [2018-03-17T09:11:06.576Z] Platform:      win32
-[debug] [2018-03-17T09:11:06.576Z] Node Version:  v8.9.4
-[debug] [2018-03-17T09:11:06.579Z] Time:          Sat Mar 17 2018 14:41:06 GMT+0530 (India Standard Time)
-[debug] [2018-03-17T09:11:06.580Z] ----------------------------------------------------------------------
+[debug] [2018-03-17T09:45:27.690Z] ----------------------------------------------------------------------
+[debug] [2018-03-17T09:45:27.696Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-03-17T09:45:27.697Z] CLI Version:   3.17.6
+[debug] [2018-03-17T09:45:27.697Z] Platform:      win32
+[debug] [2018-03-17T09:45:27.697Z] Node Version:  v8.9.4
+[debug] [2018-03-17T09:45:27.699Z] Time:          Sat Mar 17 2018 15:15:27 GMT+0530 (India Standard Time)
+[debug] [2018-03-17T09:45:27.699Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-03-17T09:11:06.712Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-03-17T09:11:06.714Z] > authorizing via signed-in user
-[debug] [2018-03-17T09:11:06.724Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-03-17T09:11:06.725Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
- { refresh_token: '1/7Ajc7hOPj5UUN9F7LSkVvOHMeREm3RpkzgIpeuW2rmM',
-  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
-  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
-  grant_type: 'refresh_token',
-  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Sat Mar 17 2018 14:41:06 GMT+0530 (India Standard Time)
-[debug] [2018-03-17T09:11:09.393Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-17T09:11:09.427Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hiccapp-official  
+[debug] [2018-03-17T09:45:27.731Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-17T09:45:27.732Z] > authorizing via signed-in user
+[debug] [2018-03-17T09:45:27.737Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hiccapp-official  
   
- Sat Mar 17 2018 14:41:09 GMT+0530 (India Standard Time)
-[debug] [2018-03-17T09:11:13.128Z] <<< HTTP RESPONSE 200
-[debug] [2018-03-17T09:11:13.130Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hiccapp-official/tokens  
+ Sat Mar 17 2018 15:15:27 GMT+0530 (India Standard Time)
+[debug] [2018-03-17T09:45:29.344Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-17T09:45:29.346Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hiccapp-official/tokens  
   
- Sat Mar 17 2018 14:41:13 GMT+0530 (India Standard Time)
-[debug] [2018-03-17T09:11:15.964Z] <<< HTTP RESPONSE 200
+ Sat Mar 17 2018 15:15:29 GMT+0530 (India Standard Time)
+[debug] [2018-03-17T09:45:30.903Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Deploying to 'hiccapp-official'...
 [info] 
 [info] i  deploying database, storage, firestore, functions, hosting
 [info] Running command: npm --prefix "%RESOURCE_DIR%" run lint
+[info] +  functions: Finished running predeploy script.
+[info] i  database: checking rules syntax...
+[debug] [2018-03-17T09:45:39.198Z] >>> HTTP REQUEST PUT https://hiccapp-official.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Sat Mar 17 2018 15:15:39 GMT+0530 (India Standard Time)
+[debug] [2018-03-17T09:45:41.980Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database hiccapp-official is valid
+[debug] [2018-03-17T09:45:41.985Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/hiccapp-official  
+  
+ Sat Mar 17 2018 15:15:41 GMT+0530 (India Standard Time)

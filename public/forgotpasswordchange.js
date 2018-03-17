@@ -29,6 +29,11 @@ function ValidateForm()
                 if (doc.exists) {
 
                     password = doc.data().Password;
+                    var z;
+                    if(doc.data().OTP_Verified == true)
+                        z = 2;
+                    else
+                        z = 0;
 
                 }
 
@@ -46,11 +51,6 @@ function ValidateForm()
           // An error happened.
         });
 
-        var z;
-        if(doc.data().OTP_Verified == true)
-            z = 2;
-        else
-            z = 0;
         docRef.update({
         Password: x,
         Status: z
