@@ -24,12 +24,13 @@ function ValidateForm()
 
     var docRef = db.collection("Users").doc(user.email);
 
+    var z;
+
     docRef.get().then(function(doc) {
 
                 if (doc.exists) {
 
                     password = doc.data().Password;
-                    var z;
                     if(doc.data().OTP_Verified == true)
                         z = 2;
                     else
