@@ -1,6 +1,22 @@
 <! DOCTYPE html>
 <html>
 <head> 
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+	<script>
+
+		// Initialize Firebase
+	    var config = {
+	    apiKey: "AIzaSyAG-7U-o1hUOhYbJ2Xox8oEYR-RlsHcMFI",
+	    authDomain: "hiccapp-official.firebaseapp.com",
+	    databaseURL: "https://hiccapp-official.firebaseio.com",
+	    projectId: "hiccapp-official",
+	    storageBucket: "hiccapp-official.appspot.com",
+	    messagingSenderId: "447455220269"
+	    };
+	    firebase.initializeApp(config);
+
+	</script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
 	<title> HiccApp </title>
 	<style> 
 
@@ -69,7 +85,7 @@
 	  display: block;
 	  cursor: pointer;
 	  width: 100%;
-	  height: auto;
+	  height: 100%;
 	  transition: .5s ease;
 	  backface-visibility: hidden;
 	}
@@ -221,6 +237,10 @@
 		background-color: green;
 	}
 
+	#browse {
+	   display: none;
+	}
+
 	</style>
 </head>
 <body bgcolor="orange">
@@ -261,7 +281,8 @@ span.onclick = function() {
 }
 </script>
  <div class="middle"> <div class="text"> <div class="dropdown"> <button  onclick="myFunction()" class="dropbtn" style="background-color: black; color: white; border: none; padding: 8px 16px;"> Upload </button> <div id="myDropdown" class="dropdown-content">
-    <button class="button" style="height: 30px; width: 100%; border: none; cursor: pointer;"> Browse </button> <br>
+ 	<button class="button" style="height: 30px; width: 100%; border: none; cursor: pointer; padding-left: 0px; padding-right: 0px;"> <label style="cursor: pointer;"for="browse">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBrowse&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label> </button>
+    <input type = "file" value="Browse" id="browse" accept="image/*" class="button" style="height: 30px; width: 100%; border: none; cursor: pointer;"><br>
     <button class="button" style="height: 30px; width: 100%; border: none; cursor: pointer;"> Gallery </button>
   </div>
 </div> </div> </div> </div> </center>
@@ -305,6 +326,6 @@ window.onclick = function(event) {
   }
 }
 </script>
-   
+<script src = "profile.js"> </script>
 </body>
 </html>
